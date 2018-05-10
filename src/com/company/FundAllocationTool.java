@@ -35,7 +35,7 @@ public class FundAllocationTool
         {
             name = scanner.nextLine();
 
-            if(!name.equalsIgnoreCase("exit"))
+            if (!name.equalsIgnoreCase("exit"))
             {
                 System.out.println("Welcome, " + name + "! What is your employee ID?");
                 String employeeId = scanner.nextLine();
@@ -55,22 +55,19 @@ public class FundAllocationTool
                     if ((amountAdded.compareTo(min) <= 0) || (amountAdded.compareTo(max) >= 0))
                     {
                         System.out.println("Please enter a value between 10 and 200");
-                    }
-
-                    else
+                    } else
                     {
-                        if(((amountAdded.compareTo(new BigDecimal("50")) <= 0)))
+                        if (((amountAdded.compareTo(new BigDecimal("50")) <= 0)))
                         {
-                            employerContribution = amountAdded.multiply(new BigDecimal(".5").setScale(2,RoundingMode.HALF_UP));
+                            employerContribution = amountAdded.multiply(new BigDecimal(".5").setScale(2, RoundingMode.HALF_UP));
                             amountAdded = amountAdded.add(employerContribution);
                             System.out.println("Your employee contributed &" + employerContribution);
                             System.out.println("Your total amount to invest is $" + amountAdded);
-                        }
-                        else
+                        } else
                         {
-                            employerContribution = new BigDecimal("50").multiply(new BigDecimal(".5").setScale(2,RoundingMode.HALF_UP));
+                            employerContribution = new BigDecimal("50").multiply(new BigDecimal(".5").setScale(2, RoundingMode.HALF_UP));
                             amountAdded = amountAdded.add(employerContribution);
-                            System.out.println("Your employee contributed &" + employerContribution);
+                            System.out.println("Your employer contributed &" + employerContribution);
                             System.out.println("Your total amount to invest is $" + amountAdded);
                         }
 
@@ -90,11 +87,10 @@ public class FundAllocationTool
                             {
                                 investmentName = investmentOptions[investmentChoice - 1];
 
-                                if(stringBuffer.contains(investmentName))
+                                if (stringBuffer.contains(investmentName))
                                 {
                                     System.out.println("You are already investing in that fund. Pick another one.");
-                                }
-                                else
+                                } else
                                 {
                                     stringBuffer.add(investmentName);
                                     System.out.println("What percentage would you like to add to " + investmentName + "?");
@@ -139,22 +135,19 @@ public class FundAllocationTool
                         listOfEmployees.add(employee);
                         printEmployee(employee);
 
-                        if(name.equalsIgnoreCase("viewEmployee"))
-                        {
-                            printEmployee(employee);
-                        }
-                        if(name.equalsIgnoreCase("viewAllEmployees"))
-                        {
 
-                        }
                     }
                 } while ((amountAdded.compareTo(min) <= 0) || (amountAdded.compareTo(max) >= 0));
             }
-            if(!name.equalsIgnoreCase("EXIT"))
+            if (!name.equalsIgnoreCase("EXIT"))
                 System.out.println("Enter another name to start another account.");
             else
                 System.out.println("Thank you for using our system. Goodbye.");
-        }while(!name.equalsIgnoreCase("EXIT"));
+        }
+
+        while (!name.equalsIgnoreCase("EXIT"));
+        {}
+
 
         buffer.clear();
         stringBuffer.clear();
@@ -164,23 +157,23 @@ public class FundAllocationTool
     {
         System.out.println("Here are your investment options: ");
         int choice = 1;
-        for(String option : investmentOptions)
+        for (String option : investmentOptions)
         {
-            System.out.println("Enter " + choice + " " +  option);
+            System.out.println("Enter " + choice + " " + option);
             choice++;
         }
     }
 
     void printEmployee(Employee employee)
     {
-        for(Employee employeee : listOfEmployees)
+        for (Employee employeee : listOfEmployees)
         {
             System.out.println("Name:     " + employeee.getName());
             System.out.println("ID:       " + employeee.getEmployeeId());
             System.out.println("Amount:   " + employeee.getAmountAdded());
             System.out.println("Investments: ");
 
-            for(InvestmentOptions investment : employee.getEmployeeInvestments())
+            for (InvestmentOptions investment : employee.getEmployeeInvestments())
             {
                 System.out.print(investment.getName());
                 System.out.print("\t" + investment.getPercent());
@@ -192,7 +185,7 @@ public class FundAllocationTool
 
     void printAllEmployees()
     {
-        System.out.println(listOfEmployees);
+
     }
 
 }
