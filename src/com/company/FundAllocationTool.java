@@ -61,13 +61,13 @@ public class FundAllocationTool
                         {
                             employerContribution = amountAdded.multiply(new BigDecimal(".5").setScale(2, RoundingMode.HALF_UP));
                             amountAdded = amountAdded.add(employerContribution);
-                            System.out.println("Your employee contributed &" + employerContribution);
+                            System.out.println("Your employee contributed $" + employerContribution);
                             System.out.println("Your total amount to invest is $" + amountAdded);
                         } else
                         {
                             employerContribution = new BigDecimal("50").multiply(new BigDecimal(".5").setScale(2, RoundingMode.HALF_UP));
                             amountAdded = amountAdded.add(employerContribution);
-                            System.out.println("Your employer contributed &" + employerContribution);
+                            System.out.println("Your employer contributed $" + employerContribution);
                             System.out.println("Your total amount to invest is $" + amountAdded);
                         }
 
@@ -112,7 +112,7 @@ public class FundAllocationTool
 
                                         buffer.add(investmentOption);
 
-                                        System.out.println(investmentOptions[investmentChoice - 1] + " added to you list of investments.");
+                                        System.out.println(investmentOptions[investmentChoice - 1] + " added to your list of investments.");
                                         System.out.println("You have allocated " + percentTotal + "% of your funds. " + (100 - percentTotal) + "% remains.");
                                         System.out.println("Enter another investment, or enter -1 to finish.");
                                         printInvestmentOptions();
