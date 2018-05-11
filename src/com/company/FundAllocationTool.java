@@ -106,10 +106,7 @@ public class FundAllocationTool
                         {
                             System.out.println("No such investment. Try again.");
                         }
-                        if (investmentChoice != -1)
-                        {
-                            System.out.println("Invalid input. Try again.");
-                        }
+
 //Percent over 100-------------------------------------------------------------------------------------------------------------------------------
                         if (percentTotal > 100)
                         {
