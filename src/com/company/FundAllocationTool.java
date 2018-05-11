@@ -127,13 +127,15 @@ public class FundAllocationTool
                             }
 
                         } while (investmentChoice != -1 || percentTotal != 100);
+                        {
 
-                        System.out.println("Printing all investment information: ");
+                            System.out.println("Printing all investment information: ");
 
-                        Employee employee = new Employee(name, amountAdded, employeeId, buffer);
+                            Employee employee = new Employee(name, amountAdded, employeeId, buffer);
 
-                        listOfEmployees.add(employee);
-                        printEmployee(employee);
+                            listOfEmployees.add(employee);
+                            printEmployee(employee);
+                        }
 
 
                     }
@@ -148,10 +150,15 @@ public class FundAllocationTool
         while (!name.equalsIgnoreCase("EXIT"));
         {}
 
-
+        if (name.equalsIgnoreCase("PRINT"))
+        {
+            System.out.println(listOfEmployees);
+        }
         buffer.clear();
         stringBuffer.clear();
+
     }
+
 
     void printInvestmentOptions()
     {
@@ -185,7 +192,7 @@ public class FundAllocationTool
 
     void printAllEmployees()
     {
-
+        System.out.println(listOfEmployees);
     }
 
 }
