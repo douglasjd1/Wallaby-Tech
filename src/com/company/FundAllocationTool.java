@@ -33,20 +33,23 @@ public class FundAllocationTool
 
         do
         {
+
             name = scanner.nextLine();
 
             if (!name.equalsIgnoreCase("exit"))
             {
                 System.out.println("Welcome, " + name + "! What is your employee ID?");
+
+//Copied
                 String employeeId = scanner.nextLine();
 
                 System.out.println("How much per month would you like to add to your 401(k)? (amount must be between $10 and $200)");
-
+//Copied start
                 BigDecimal min = new BigDecimal("9");
                 BigDecimal max = new BigDecimal("201");
                 BigDecimal amountAdded;
                 BigDecimal employerContribution;
-
+//Copied end
                 do
                 {
                     amountAdded = scanner.nextBigDecimal();
@@ -73,11 +76,12 @@ public class FundAllocationTool
 
                         System.out.println("Which programs would you like to invest in?");
                         printInvestmentOptions();
+//Coppied Start
                         int investmentChoice = 1;
                         String investmentName = "";
                         double percentTotal = 0;
                         BigDecimal investmentTotal = new BigDecimal("0");
-
+//Copied End
                         do
                         {
                             investmentChoice = scanner.nextInt();
@@ -159,7 +163,7 @@ public class FundAllocationTool
 
     }
 
-
+//Copied Start
     void printInvestmentOptions()
     {
         System.out.println("Here are your investment options: ");
@@ -194,5 +198,5 @@ public class FundAllocationTool
     {
         System.out.println(listOfEmployees);
     }
-
+//Copied End
 }
