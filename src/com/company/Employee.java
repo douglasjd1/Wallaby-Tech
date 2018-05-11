@@ -8,15 +8,15 @@ public class Employee
 {
     private String name;
     private BigDecimal amountAdded;
-    private String employeeId;
+
     List<InvestmentOptions> employeeInvestments = new LinkedList<>();
 
 
-    public Employee(String name, BigDecimal amountAdded, String employeeId, List<InvestmentOptions> employeeInvestments)
+    public Employee(String name, BigDecimal amountAdded, List<InvestmentOptions> employeeInvestments)
     {
         this.name = name;
         this.amountAdded = amountAdded;
-        this.employeeId = employeeId;
+
         this.employeeInvestments = employeeInvestments;
     }
     public String getName()
@@ -29,10 +29,6 @@ public class Employee
         return amountAdded;
     }
 
-    public String getEmployeeId()
-    {
-        return employeeId;
-    }
 
     public List<InvestmentOptions> getEmployeeInvestments()
     {
